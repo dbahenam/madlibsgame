@@ -29,6 +29,6 @@ The Mad Libs Game uses polymorphism when different types of `MadLibsWordProvider
 To install the Mad Libs Game, follow these steps:
 
 1. Clone the repository or download the source code.
-2. Compile the source code using a C++ compiler such as GCC or Visual Studio.
+2. Load the CMakeLists.txt file.
 3. Run the executable file.
 

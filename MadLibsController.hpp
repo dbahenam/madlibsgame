@@ -11,20 +11,25 @@
 #include <iostream>
 #include <vector>
 #include "MadlibWordProvider.hpp"
-
+#include <memory>
 class MadLibsController {
 public:
 
     MadLibsController(); //default ctor
+    MadLibsController(const MadLibsController &aCopy);
+    MadLibsController& operator=(const MadLibsController &aCopy);
+    ~MadLibsController();
     bool  runStory(const char *aFilename, MadlibWordProvider &aProvider, std::ostream &anOutput);
     bool  readFile(const char *aFilename);
     void  getSubstitutes(MadlibWordProvider &aProvider);
     void  showFinishedStory(std::ostream &anOutput);
+    std::string toUpper(const std::string &aWord);
     std::vector<std::string> getWords();
-  
+
+
 protected:
-    std::vector<std::string> words; //collected from users...
-    // You'll probably want to add some additional data members!!
+    std::vector<std::string> *words; //collected from users...
+    std::vector<std::string> *story;
 };
 
 #endif /* MadLibsController_hpp */
